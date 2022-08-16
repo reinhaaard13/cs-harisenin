@@ -54,13 +54,24 @@ db.Asset.hasOne(db.Category, {
 
 db.Product.belongsToMany(db.Asset, {
   through: db.Product_Asset,
-  foreignKey: "id",
-  otherKey: "asset_id"
+  foreignKey: "asset_id",
+  otherKey: "product_id"
 })
 db.Asset.belongsToMany(db.Product, {
   through: db.Product_Asset,
-  foreignKey: "id",
+  foreignKey: "product_id",
+  otherKey: "asset_id"
+})
+
+db.Product.belongsToMany(db.Category, {
+  through: db.Category_Product,
+  foreignKey: "category_id",
   otherKey: "product_id"
+})
+db.Category.belongsToMany(db.Product, {
+  through: db.Category_Product,
+  foreignKey: "product_id",
+  otherKey: "category_id"
 })
 
 db.sequelize = sequelize;
