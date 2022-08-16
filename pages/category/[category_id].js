@@ -1,4 +1,5 @@
 import axios from "axios"
+import useSWR from "swr"
 
 import { Flex, Text, Box } from "@chakra-ui/react";
 import Header from "../../components/UI/Header";
@@ -7,7 +8,6 @@ import CategoryProductList from "../../components/Category/CategoryProductList";
 import BoxContainer from "../../components/UI/BoxContainer";
 
 export default function CategoryScreen(props) {
-	
 
 	return (
 		<>

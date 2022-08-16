@@ -12,14 +12,15 @@
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "sql6.freesqldatabase.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "sql6513238",
+    "password": "8Hd8PUhxEa",
+    "database": "sql6513238",
+    "host": "sql6.freesqldatabase.com",
+    "dialect": "mysql",
+    "timezone": "+07:00"
   }
 }

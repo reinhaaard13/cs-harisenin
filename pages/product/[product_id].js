@@ -5,8 +5,6 @@ import useSWR from "swr";
 
 import { Flex, Text, Box } from "@chakra-ui/react";
 import Header from "../../components/UI/Header";
-import CategoryCover from "../../components/Category/CategoryCover";
-import CategoryProductList from "../../components/Category/CategoryProductList";
 import BoxContainer from "../../components/UI/BoxContainer";
 import ProductCover from "../../components/Product/ProductCover";
 import ProductAssetList from "../../components/Product/ProductAssetList";
@@ -31,17 +29,4 @@ export default function ProductScreen(props) {
       <ProductAssetList product={data}/>
 		</>
 	);
-}
-
-export async function getServerSideProps(context) {
-	const { product_id } = context.query;
-	const product = await axios.get(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/api/product/${product_id}`
-	);
-
-	return {
-		props: {
-			product: product.data,
-		},
-	};
 }
