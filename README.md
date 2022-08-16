@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Study Case Harisenin.com
 
-First, run the development server:
+Berikut adalah hasil studi kasus yang diberikan oleh harisenin.com.
+
+
+## Deployment
+
+Untuk menjalankan aplikasi ini, silahkan ikuti langkah di bawah ini
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/reinhaaard13/cs-harisenin.git
+  cd cs-harisenin
+
+  npm install
+  npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Saya sudah melakukan hosting MySQL di salah satu penyedia layanan, namun jikalau ternyata tidak bisa (dikarenakan memang hosting gratis), maka file mysqldump sudah disiapkan di direktori root. Atau [klik disini](https://github.com/reinhaaard13/cs-harisenin/blob/main/db_harisenin.sql).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Screenshots
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Tampilan halaman Utama
+Aplikasi Menampilkan Halaman Utama yang berisi hero section, category slider, dan daftar product.
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/home.jpg)
+### Tampilan halaman Product
+Aplikasi Menampilkan semua product yang tesediua
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/product-all.jpg)
+### Tampilan halaman membuat product baru
+Aplikasi Menampilkan modal untuk menginput product baru, dan dapat menambahkan asset yang akan disimpan
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/product-create.jpg)
+### Tampilan halaman gallery product
+Aplikasi Menampilkan foto-foto dari satu product yang dipilih. User juga dapat menambahkan aset lain untuk product ini.
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/product-gallery.jpg)
+### Tampilan halaman Category
+Aplikasi Menampilkan semua category
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/category-all.jpg)
+### Tampilan halaman Product berdasarkan Category
+Aplikasi Menampilkan semua product dari category yang dipilih user.
+![App Screenshot](https://raw.githubusercontent.com/reinhaaard13/cs-harisenin/main/screenshots/product-by-category.jpg)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
