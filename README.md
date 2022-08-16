@@ -13,7 +13,8 @@ Untuk menjalankan aplikasi ini, silahkan ikuti langkah di bawah ini
   cd cs-harisenin
 
   npm install
-  npm run dev
+  npm run build
+  npm run start
 ```
 
 Saya sudah melakukan hosting MySQL di salah satu penyedia layanan, namun jikalau ternyata tidak bisa (dikarenakan memang hosting gratis), maka file mysqldump sudah disiapkan di direktori root. Atau [klik disini](https://github.com/reinhaaard13/cs-harisenin/blob/main/db_harisenin.sql).
