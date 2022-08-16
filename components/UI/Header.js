@@ -1,16 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
+import { useRouter } from "next/router";
+
 import { Flex, Text, UnorderedList, ListItem } from "@chakra-ui/react";
 
 const Header = () => {
+	const router = useRouter();
+
 	return (
 		<Flex
-			// bgColor={"yellow"}
 			shadow={"md"}
 			w="full"
 			justifyContent={"space-between"}
-			// px={4}
 			alignItems={"center"}
 		>
 			<Link href="/">
@@ -25,12 +27,24 @@ const Header = () => {
 			<Flex display={["none", "none", "flex"]}>
 				<UnorderedList listStyleType={"none"} display="flex">
 					<Link href="/product/all">
-						<ListItem p={6} cursor={"pointer"}>
+						<ListItem
+							p={6}
+							cursor={"pointer"}
+							fontWeight={router.asPath.includes("/product") && "800"}
+							borderBottom={router.asPath.includes("/product") && "4px solid black"}
+							_hover={{ backgroundColor: "#eee" }}
+						>
 							Products
 						</ListItem>
 					</Link>
 					<Link href="/category/all">
-						<ListItem p={6} cursor={"pointer"}>
+						<ListItem
+							p={6}
+							cursor={"pointer"}
+							fontWeight={router.asPath.includes("/category") && "800"}
+							borderBottom={router.asPath.includes("/category") && "4px solid black"}
+							_hover={{ backgroundColor: "#eee" }}
+						>
 							Category
 						</ListItem>
 					</Link>

@@ -5,7 +5,7 @@ import {
   Text,
   SimpleGrid 
 } from "@chakra-ui/react"
-import CategoryProductItem from './CategoryProductItem'
+import ProductItem from '../Product/ProductItem'
 
 const CategoryProductList = ({products}) => {
   return (
@@ -18,7 +18,7 @@ const CategoryProductList = ({products}) => {
       spacing={4}
     >
       {products?.map((product, idx) => (
-        <CategoryProductItem key={idx} product={product} />
+        <ProductItem key={idx} product={product} />
       ))}
     </SimpleGrid>
   )

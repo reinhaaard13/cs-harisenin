@@ -13,7 +13,7 @@ const CategoryProductItem = ({product}) => {
 			rounded="md"
 			overflow={"clip"}
 		>
-			<Box bgColor={"yellow"} w={"full"} h={"32"}>
+			<Box bgColor={"gray.300"} w={"full"} h={"32"}>
 				<Box position={"relative"} w={"full"} h={"full"}>
 					<Image
 						src={product.Assets[0].path}

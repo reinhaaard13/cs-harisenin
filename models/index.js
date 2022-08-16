@@ -54,13 +54,13 @@ db.Asset.hasOne(db.Category, {
 
 db.Product.belongsToMany(db.Asset, {
   through: db.Product_Asset,
-  foreignKey: "asset_id",
-  otherKey: "product_id"
+  foreignKey: "product_id",
+  otherKey: "asset_id"
 })
 db.Asset.belongsToMany(db.Product, {
   through: db.Product_Asset,
-  foreignKey: "product_id",
-  otherKey: "asset_id"
+  foreignKey: "asset_id",
+  otherKey: "product_id"
 })
 
 db.Product.belongsToMany(db.Category, {

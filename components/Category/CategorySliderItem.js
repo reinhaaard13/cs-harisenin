@@ -11,7 +11,7 @@ const CategorySliderItem = ({ category }) => {
 			h={32}
 			w={80}
 			maxW={"1200px"}
-			bg="yellow"
+			bg="gray.300"
 			rounded={"xl"}
 			overflow={"hidden"}
 			display={"inline-block"}

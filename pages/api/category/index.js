@@ -27,9 +27,9 @@ const handler = nextConnect()
 		try {
 			newAsset = await db.Asset.create(
 				{
-					name: req.file.original_filename,
-					path: req.file.secure_url,
-					size: req.file.bytes,
+					name: req.file[0].original_filename,
+					path: req.file[0].secure_url,
+					size: req.file[0].bytes,
 				},
 				{
 					transaction: trx,

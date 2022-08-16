@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Flex, Text, Box } from "@chakra-ui/react";
 
-const CategoryCover = ({ category }) => {
+const ProductCover = ({ product }) => {
 	return (
 		<Flex width={"full"} marginTop={8} justifyContent={"center"}>
 			<Box
@@ -16,7 +16,7 @@ const CategoryCover = ({ category }) => {
 			>
 				<Box position={"relative"} w={"full"} h={"full"}>
 					<Image
-						src={category.Asset.path}
+						src={product?.Assets[0].path}
 						alt="cover"
 						layout="fill"
 						objectFit="cover"
@@ -26,9 +26,9 @@ const CategoryCover = ({ category }) => {
 							fontSize={32}
 							fontWeight={"semibold"}
 							textColor={"white"}
-							textShadow={"base"}
+							textShadow={"md"}
 						>
-							{category.category_name}
+							{product?.product_name}
 						</Text>
 						<Box
 							px={2}
@@ -39,7 +39,7 @@ const CategoryCover = ({ category }) => {
 							backdropBlur={"md"}
 						>
 							<Text fontWeight={"500"} fontSize={"sm"}>
-								{category.category_slug}
+								{product?.product_slug}
 							</Text>
 						</Box>
 					</Box>
@@ -49,4 +49,4 @@ const CategoryCover = ({ category }) => {
 	);
 };
 
-export default CategoryCover;
+export default ProductCover;

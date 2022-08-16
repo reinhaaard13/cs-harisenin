@@ -6,30 +6,33 @@ import FormData from "form-data";
 const upload = multer();
 
 const middleware = nextConnect()
-	.use(upload.any())
+	.use(upload.array("assets"))
 	.use(async (req, res, next) => {
 		const { files } = req;
 
-		const formData = new FormData();
+		// console.log(files);
+		let assets = [];
+		for (const file of files) {
+			const formData = new FormData();
 
-		formData.append("file", files[0].buffer, {
-			filename: files[0].originalname,
-		});
-		formData.append("upload_preset", "hs_casestudy");
+			formData.append("file", file.buffer, {
+				filename: file.originalname,
+			});
+			formData.append("upload_preset", "hs_casestudy");
 
-		const response = await axios.post(
-			"https://api.cloudinary.com/v1_1/reinhaaard/image/upload",
-			formData,
-			{
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			}
-		);
+			const response = await axios.post(
+				"https://api.cloudinary.com/v1_1/reinhaaard/image/upload",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
 
-		// console.log(response.data);
-
-		req.file = response.data;
+			assets.push(response.data);
+		}
+		req.file = assets;
 		next();
 	});
 
