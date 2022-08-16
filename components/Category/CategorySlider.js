@@ -19,54 +19,68 @@ const CategorySlider = () => {
 	};
 
 	return (
-		<BoxContainer position={"relative"} className={'group'}>
-			<Box
-				whiteSpace="nowrap"
-				overflowX="scroll"
-				// overflow={"hidden"}
-				sx={{
-					"&::-webkit-scrollbar": {
-						display: "none"
-					}
-				}}
-				ref={scrollRef}
-				scrollBehavior={"smooth"}
-			>
-				{data?.map((category, index) => (
-					<CategorySliderItem key={index} category={category} />
-				))}
-			</Box>
-			<IconButton
-				icon={<IoChevronBack />}
-				onClick={() => {
-					scroll(-200);
-				}}
-				top={"30%"}
-				size={"sm"}
-				colorScheme={"gray"}
-				shadow={"lg"}
-				left={5}
-				position={"absolute"}
-				opacity={0}
-        transform={'translateY(20px)'}
-				_groupHover={{ opacity: 1, transform: "translateY(0)" }}
-			/>
-			<IconButton
-				icon={<IoChevronForward />}
-				onClick={() => {
-					scroll(200);
-				}}
-				top={"30%"}
-				size={"sm"}
-				shadow={"lg"}
-				colorScheme={"gray"}
-				right={5}
-				position={"absolute"}
-				opacity={0}
-        transform={'translateY(20px)'}
-				_groupHover={{ opacity: 1, transform: "translateY(0)" }}
-			/>
-		</BoxContainer>
+		<>
+			{data ? (
+				<BoxContainer position={"relative"} className={"group"}>
+					<Box
+						whiteSpace="nowrap"
+						overflowX="scroll"
+						// overflow={"hidden"}
+						sx={{
+							"&::-webkit-scrollbar": {
+								display: "none",
+							},
+						}}
+						ref={scrollRef}
+						scrollBehavior={"smooth"}
+					>
+						{data?.map((category, index) => (
+							<CategorySliderItem key={index} category={category} />
+						))}
+					</Box>
+					<IconButton
+						icon={<IoChevronBack />}
+						onClick={() => {
+							scroll(-200);
+						}}
+						top={"30%"}
+						size={"sm"}
+						colorScheme={"gray"}
+						shadow={"lg"}
+						left={5}
+						position={"absolute"}
+						opacity={0}
+						transform={"translateY(20px)"}
+						_groupHover={{ opacity: 1, transform: "translateY(0)" }}
+					/>
+					<IconButton
+						icon={<IoChevronForward />}
+						onClick={() => {
+							scroll(200);
+						}}
+						top={"30%"}
+						size={"sm"}
+						shadow={"lg"}
+						colorScheme={"gray"}
+						right={5}
+						position={"absolute"}
+						opacity={0}
+						transform={"translateY(20px)"}
+						_groupHover={{ opacity: 1, transform: "translateY(0)" }}
+					/>
+				</BoxContainer>
+			) : (
+				<BoxContainer
+					position={"relative"}
+					height={24}
+					display={"flex"}
+					justifyContent="center"
+					alignItems="center"
+				>
+					<Text>No Category Found</Text>
+				</BoxContainer>
+			)}
+		</>
 	);
 };
 
