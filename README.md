@@ -3,10 +3,16 @@
 
 Berikut adalah hasil studi kasus yang diberikan oleh harisenin.com.
 
+## Deployed on Vercel
 
-## Deployment
+Aplikasi ini sudah dihosting di Vercel. Klik [link ini](https://cs-harisenin.vercel.app/) untuk menuju aplikasi.
+[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/]
+[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/]
+[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/]
 
-Untuk menjalankan aplikasi ini, silahkan ikuti langkah di bawah ini
+## Deployment on Local
+
+Untuk menjalankan aplikasi ini pada localhost, silahkan ikuti langkah di bawah ini
 
 ```bash
   git clone https://github.com/reinhaaard13/cs-harisenin.git
