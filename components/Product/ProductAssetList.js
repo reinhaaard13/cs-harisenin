@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import FsLightbox from "fslightbox-react";
 
 import { HiPlus } from "react-icons/hi";
 
@@ -8,7 +9,29 @@ import BoxContainer from "../UI/BoxContainer";
 import NewProductAsset from "./NewProductAsset";
 
 const ProductAssetList = ({ product }) => {
+	const [lightboxController, setLightBoxController] = useState({
+		toggler: false,
+		sourceIndex: 0,
+	})
+
+	const openLightboxOnIndex = (idx) => {
+		setLightBoxController(prevState => ({
+			toggler: !prevState.toggler,
+			sourceIndex: idx,
+		}))
+	}
+
+	console.log(lightboxController)
+
 	return (
+		<>
+		<FsLightbox
+			toggler={lightboxController.toggler}
+			sources={
+				product?.Assets.map((asset) => (asset.path))
+			}
+			sourceIndex={lightboxController.sourceIndex}
+		/>
 		<BoxContainer>
 			<SimpleGrid columns={[1, 2, 4]} spacing={4}>
 				{product &&
@@ -21,6 +44,7 @@ const ProductAssetList = ({ product }) => {
 							rounded={"md"}
 							backgroundColor={"gray.300"}
 							overflow={"clip"}
+							onClick={() => {openLightboxOnIndex(idx)}}
 						>
 							<Image
 								src={asset.path}
@@ -45,6 +69,7 @@ const ProductAssetList = ({ product }) => {
 				<NewProductAsset product={product} />
 			</SimpleGrid>
 		</BoxContainer>
+		</>
 	);
 };
 
