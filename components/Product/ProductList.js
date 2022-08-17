@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-import { Flex, Text, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Text, SimpleGrid, Spinner } from "@chakra-ui/react";
 
 import useSWR from "swr";
 
@@ -13,9 +13,24 @@ const ProductList = () => {
 		axios.get(url).then((res) => res.data)
 	);
 
+  if (!data) {
+		return (
+			<BoxContainer
+				position={"relative"}
+				height={24}
+				display={"flex"}
+				justifyContent="center"
+				alignItems="center"
+			>
+				<Spinner />
+				<Text ml={4}>Loading</Text>
+			</BoxContainer>
+		);
+	}
+
 	return (
 		<>
-			{data ? (
+			{data.length > 0 ? (
 				<SimpleGrid
 					w="95%"
 					maxW="1200px"

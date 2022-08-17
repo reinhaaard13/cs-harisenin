@@ -3,7 +3,7 @@ import Image from "next/image";
 import axios from "axios";
 import useSWR from "swr";
 
-import { Flex, Text, Box, IconButton } from "@chakra-ui/react";
+import { Flex, Text, Box, IconButton, Spinner } from "@chakra-ui/react";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 import BoxContainer from "../UI/BoxContainer";
 import CategorySliderItem from "./CategorySliderItem";
@@ -18,9 +18,24 @@ const CategorySlider = () => {
 		scrollRef.current.scrollLeft += offset;
 	};
 
+	if (!data) {
+		return (
+			<BoxContainer
+				position={"relative"}
+				height={24}
+				display={"flex"}
+				justifyContent="center"
+				alignItems="center"
+			>
+				<Spinner />
+				<Text ml={4}>Loading</Text>
+			</BoxContainer>
+		);
+	}
+
 	return (
 		<>
-			{data ? (
+			{data.length > 0 ? (
 				<BoxContainer position={"relative"} className={"group"}>
 					<Box
 						whiteSpace="nowrap"
