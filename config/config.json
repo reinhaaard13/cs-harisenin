@@ -16,10 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "sql6513238",
-    "password": "8Hd8PUhxEa",
-    "database": "sql6513238",
-    "host": "sql6.freesqldatabase.com",
+    "username": "admin",
+    "password": "qwer1234",
+    "database": "db_harisenin",
+    "host": "db-rise.cuzgpwhecnwr.ap-southeast-1.rds.amazonaws.com",
     "dialect": "mysql",
     "timezone": "+07:00"
   }
