@@ -44,6 +44,7 @@ const ProductAssetList = ({ product }) => {
 							rounded={"md"}
 							backgroundColor={"gray.300"}
 							overflow={"clip"}
+							cursor={"pointer"}
 							onClick={() => {openLightboxOnIndex(idx)}}
 						>
 							<Image
