@@ -5,9 +5,9 @@ Berikut adalah hasil studi kasus yang diberikan oleh harisenin.com.
 
 ## Deployed on Vercel
 
-Aplikasi ini sudah dihosting di Vercel. Klik [link ini](https://cs-harisenin.vercel.app/) untuk menuju aplikasi.
-[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/)
-[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/)
+Aplikasi ini sudah dihosting di Vercel. Klik [link ini](https://cs-harisenin.vercel.app/) untuk menuju aplikasi.\n
+[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/)\n
+[https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/)\n
 [https://cs-harisenin.vercel.app/](https://cs-harisenin.vercel.app/)
 
 ## Deployment on Local
